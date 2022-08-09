@@ -22,12 +22,14 @@ function App() {
     console.log(data.hits);
   };  
   
-   
+   const updateSearch = e =>{
+    setSearch(e.target.value)
+   }
   
   return (
     <div className="App">
       <form clasName="Search-form">
-        <input className = " search-bar" type="text" value={search}/>
+        <input className = " search-bar" type="text" value={search} onChnage={updateSearch}/>
         <button  className="search-button" type="Submit">Search</button>
       </form>
       {recipes.map(recipe => (
